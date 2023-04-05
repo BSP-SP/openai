@@ -1,0 +1,258 @@
+Thanks to rapid progress in artificial intelligence,
+we have entered an era when technology and
+philosophy intersect in interesting ways. Sitting squarely at the centre of this intersection
+are large language models (LLMs). The more
+adept LLMs become at mimicking human language, the more vulnerable we become to anthropomorphism, to seeing the systems in which
+they are embedded as more human-like than they
+really are. This trend is amplified by the natural tendency to use philosophically loaded terms,
+such as “knows”, “believes”, and “thinks”, when
+describing these systems. To mitigate this trend,
+this paper advocates the practice of repeatedly
+stepping back to remind ourselves of how LLMs,
+and the systems of which they form a part, actually work. The hope is that increased scientific precision will encourage more philosophical
+nuance in the discourse around artificial intelligence, both within the field and in the public
+sphere.
+1 Introduction
+The advent of large language models (LLMs)
+such as Bert (Devlin et al., 2018) and GPT2 (Radford et al., 2019) was a game-changer
+for artificial intelligence. Based on transformer
+architectures (Vaswani et al., 2017), comprising hundreds of billions of parameters, and
+trained on hundreds of terabytes of textual data,
+their contemporary successors such as GPT-3
+(Brown et al., 2020), Gopher (Rae et al., 2021),
+and PaLM (Chowdhery et al., 2022) have given
+new meaning to the phrase “unreasonable effectiveness of data” (Halevy et al., 2009).
+The effectiveness of these models is “unreasonable” (or, with the benefit of hindsight, somewhat surprising) in three inter-related ways.
+First, the performance of LLMs on benchmarks
+scales with the size of the training set (and, to
+a lesser degree with model size). Second, there
+are qualitative leaps in capability as the models
+scale. Third, a great many tasks that demand intelligence in humans can be reduced to next token
+prediction with a sufficiently performant model.
+It is the last of these three surprises that is the
+focus of the present paper.
+As we build systems whose capabilities more
+and more resemble those of humans, despite the
+fact that those systems work in ways that are
+fundamentally different from the way humans
+work, it becomes increasingly tempting to anthropomorphise them. Humans have evolved to
+co-exist over many millions of years, and human
+culture has evolved over thousands of years to
+facilitate this co-existence, which ensures a degree of mutual understanding. But it is a serious
+mistake to unreflectingly apply to AI systems the
+same intuitions that we deploy in our dealings
+with each other, especially when those systems
+are so profoundly different from humans in their
+underlying operation.
+The AI systems we are building today have
+considerable utility and enormous commercial
+potential, which imposes on us a great responsibility. To ensure that we can make informed
+decisions about the trustworthiness and safety of
+the AI systems we deploy, it is advisable to keep
+to the fore the way those systems actually work,
+and thereby to avoid imputing to them capacities they lack, while making the best use of the
+remarkable capabilities they genuinely possess.
+2 What LLMs Really Do
+As Wittgenstein reminds us, human language use
+is an aspect of human collective behaviour, and
+it only makes sense in the wider context of the
+human social activity of which it forms a part
+(Wittgenstein, 1953). A human infant is born
+into a community of language users with which
+it shares a world, and it acquires language by
+interacting with this community and with the
+world it shares with them. As adults (or indeed
+as children past a certain age), when we have a
+casual conversation, we are engaging in an activity that is built upon this foundation. The same
+is true when we make a speech or send an email
+or deliver a lecture or write a paper. All of this
+language-involving activity makes sense because
+we inhabit a world we share with other language
+users.
+A large language model is a very different sort of animal (Bender and Koller, 2020;
+Bender et al., 2021; Marcus and Davis, 2020).
+(Indeed, it is not an animal at all, which is very
+much to the point.) LLMs are generative mathematical models of the statistical distribution
+of tokens in the vast public corpus of humangenerated text, where the tokens in question include words, parts of words, or individual characters including punctuation marks. They are
+generative because we can sample from them,
+which means we can ask them questions. But
+the questions are of the following very specific
+kind. “Here’s a fragment of text. Tell me how
+this fragment might go on. According to your
+model of the statistics of human language, what
+words are likely to come next?”1
+Recently, it has become commonplace to use
+the term “large language model” both for the
+generative models themselves, and for the systems in which they are embedded, especially in
+the context of conversational agents or AI assistants such as ChatGPT. But for philosophical clarity, it’s crucial to keep the distinction between these things to the fore. The bare-bones
+LLM itself, the core component of an AI assistant, has a highly specific, well-defined function,
+which can be described in precise mathematical
+and engineering terms. It is in this sense that we
+can speak of what an LLM “really” does.
+Suppose we give an LLM the prompt “The first
+person to walk on the Moon was ”, and suppose
+it responds with “Neil Armstrong”. What are
+we really asking here? In an important sense, we
+are not really asking who was the first person to
+walk on the Moon. What we are really asking
+the model is the following question: Given the
+statistical distribution of words in the vast public
+corpus of (English) text, what words are most
+likely to follow the sequence “The first person to
+walk on the Moon was ”? A good reply to this
+question is “Neil Armstrong”.
+Similarly, we might give an LLM the prompt
+“Twinkle twinkle ”, to which it will most likely
+respond “little star”. On one level, for sure, we
+are asking the model to remind us of the lyrics
+of a well-known nursery rhyme. But in an important sense what we are really doing is asking it the following question: Given the statistical distribution of words in the public corpus,
+what words are most likely to follow the sequence
+“Twinkle twinkle ”? To which an accurate answer is “little star”.
+Here’s a third example. Suppose you are the
+developer of an LLM and you prompt it with
+the words “After the ring was destroyed, Frodo
+Baggins returned to ”, to which it responds “the
+Shire”. What are you doing here? On one
+level, it seems fair to say, you might be testing
+the model’s knowledge of the fictional world of
+Tolkien’s novels. But, in an important sense,
+the question you are really asking (as you presumably know, because you are the developer) is
+this: Given the statistical distribution of words
+in the public corpus, what words are most likely
+to follow the sequence “After the ring was destroyed, Frodo Baggins returned to ”? To which
+an appropriate response is “the Shire”.
+To the human user, each of these examples
+presents a different sort of relationship to truth.
+In the case of Neil Armstrong, the ultimate
+grounds for the truth or otherwise of the LLMs
+answer is the real world. The Moon is a real object and Neil Armstrong was a real person, and
+his walking on the Moon is a fact about the physical world. Frodo Baggins, on the other hand, is
+a fictional character, and the Shire is a fictional
+place. Frodo’s return to the Shire is a fact about
+an imaginary world, not a real one. As for the little star in the nursery rhyme, well that is barely
+even a fictional object, and the only fact at issue
+is the occurrence of the words “little star” in a
+familiar English rhyme.
+These distinctions are invisible at the level of
+what the LLM itself — the core component of
+any LLM-based system — actually does, which
+is simply to generate statistically likely sequences
+of words. However, when we evaluate the utility
+of the model, these distinctions matter a great
+deal. There is no point in seeking Frodo’s (fic
+tional) descendants in the (real) English county
+of Surrey. This is one reason why it’s a good
+idea for users to repeatedly remind themselves
+of what LLMs really do. It’s also a good idea for
+developers to remind themselves of this, to avoid
+the misleading use of philosophically fraught
+words to describe the capabilities of LLMs, words
+such as “belief”, “knowledge”, “understanding”,
+“self”, or even “consciousness”.
+3 LLMs and the Intentional Stance
+It is perfectly natural to use anthropomorphic
+language in everyday conversations about artefacts, especially in the context of information
+technology. We do it all the time. My watch
+doesn’t realise we’re on daylight saving time. My
+phone thinks we’re in the car park. The mail
+server won’t talk to the network. And so on.
+These examples of what Dennett calls the intentional stance are harmless and useful forms of
+shorthand for complex processes whose details
+we don’t know or care about.2 They are harmless because no-one takes them seriously enough
+to ask their watch to get it right next time, say, or
+to tell the mail server to try harder. Even without having read Dennett, everyone understands
+they are taking the intentional stance, that these
+are just useful turns of phrase.
+The same consideration applies to LLMs, both
+for users and for developers. Insofar as everyone
+implicitly understands that these turns of phrase
+are just convenient shorthands, that they are
+taking the intentional stance, it does no harm to
+use them. However, in the case of LLMs, such is
+their power, things can get a little blurry. When
+an LLM can be made to improve its performance
+on reasoning tasks simply by being told to “think
+step by step” (Kojima et al., 2022) (to pick just
+one remarkable discovery), the temptation to see
+it as having human-like characteristics is almost
+overwhelming.
+To be clear, it is not the argument of this paper
+that a system based on a large language model
+could never, in principle, warrant description in
+terms of beliefs, intentions, reason, etc. Nor does
+the paper advocate any particular account of belief, of intention, or of any other philosophically
+contentious concept.3 Rather, the point is that
+such systems are simultaneously so very different from humans in their construction, yet (often
+but not always) so human-like in their behaviour,
+that we need to pay careful attention to how they
+work before we speak of them in language suggestive of human capabilities and patterns of behaviour.
+To sharpen the issue, let’s compare two very
+short conversations, one between Alice and Bob
+(both human), and a second between Alice
+and BOT, a fictional question-answering system
+based on a large language model. Suppose Alice asks Bob “What country is to the south of
+Rwanda?” and Bob replies “I think it’s Burundi”. Shortly afterwards, because Bob is often
+wrong in such matters, Alice presents the same
+question to BOT, which (to her mild disappointment) offers the same answer: “Burundi is to the
+south of Rwanda”. Alice might now reasonably
+remark that both Bob and BOT knew that Burundi was south of Rwanda. But what is really
+going on here? Is the word “know” being used
+in the same sense in the two cases?
+4 Humans and LLMs Compared
+What is Bob, a representative human, doing
+when he correctly answers a straightforward factual question in an everyday conversation? To
+begin with, Bob understands that the question
+comes from another person (Alice), that his answer will be heard by that person, and that it will
+have an effect on what she believes. In fact, after many years together, Bob knows a good deal
+else about Alice that is relevant to such situations: her background knowledge, her interests,
+her opinion of him, and so on. All of this frames
+the communicative intent behind his reply, which
+is to impart a certain fact to her, given his understanding of what she wants to know.
+Moreover, when Bob announces that Burundi
+is to the south of Rwanda, he is doing so against
+the backdrop of various human capacities that
+we all take for granted when we engage in everyday commerce with each other. There is a whole
+battery of techniques we can call upon to ascertain whether a sentence expresses a true proposition, depending on what sort of sentence it is.
+We can investigate the world directly, with our
+own eyes and ears. We can consult Google or
+Wikipedia, or even a book. We can ask someone who is knowledgeable on the relevant subject matter. We can try to think things through,
+rationally, by ourselves, but we can also argue
+things out with our peers. All of this relies on
+there being agreed criteria external to ourselves
+against which what we say can be assessed.
+How about BOT? What is going on when a
+large language model is used to answer such questions? First, it’s worth noting that a bare-bones
+LLM is, by itself, not a conversational agent.4
+For a start, the LLM will have to be embedded
+in a larger system to manage the turn-taking in
+the dialogue. But it will also need to be coaxed
+into producing conversation-like behaviour.5 Recall that an LLM simply generates sequences of
+words that are statistically likely follow-ons from
+a given prompt. But the sequence “What country is to the south of Rwanda? Burundi is to the
+south of Rwanda”, with both sentences squashed
+together exactly like that, may not, in fact, be
+very likely. A more likely pattern, given that
+numerous plays and film scripts feature in the
+public corpus, would be something like the following.
+Fred: What country is south of Rwanda?
+Jane: Burundi is south of Rwanda.
+Of course, those exact words may not appear,
+but their likelihood, in the statistical sense, will
+be high. In short, BOT will be much better
+at generating appropriate responses if they conform to this pattern rather than to the pattern
+of actual human conversation. Fortunately, the
+user (Alice) doesn’t have to know anything about
+this. In the background, the LLM is invisibly
+prompted with a prefix along the following lines.
+This is a conversation between
+User, a human, and BOT, a clever and
+knowledgeable AI agent.
+User: What is 2+2?
+BOT: The answer is 4.
+User: Where was Albert Einstein born?
+BOT: He was born in Germany.
+Alice’s query, in the following form, is appended to this prefix.
+User: What country is south of Rwanda?
+BOT:
+This yields the full prompt to be submitted
+to the LLM, which will hopefully predict a con
